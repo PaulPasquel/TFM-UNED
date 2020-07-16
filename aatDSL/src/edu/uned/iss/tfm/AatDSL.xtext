@@ -1,0 +1,124 @@
+grammar edu.uned.iss.tfm.AatDSL with org.eclipse.xtext.common.Terminals
+
+generate aatDSL "http://www.uned.edu/iss/tfm/AatDSL"
+
+Model:
+	feature+=Feature
+;
+
+// Each Feature, has one or more Scenarios
+Feature:
+	'Feature:' description=STRING
+	scenarios += Scenario*	
+;
+
+// Each Scenario, has Given, When, Then
+Scenario:
+	'Scenario:' sequence=INT scenario=STRING 
+		('Given:' given=GivenStatements)?
+		'When:' when=ActionsStatements
+		'Then:' then=ThenStatements
+;
+
+//
+ActivityStarted:
+	"Activity_to_check" name=ANDROID_ID
+;
+
+GivenStatements:
+	activity=ActivityStarted?
+	validations+=ConditionalStatement+
+;
+
+//
+ActionsStatements:
+	statements+=Statement+;
+
+
+//
+ThenStatements:
+	validations+=ConditionalStatement+;
+
+
+/**********************
+ * Action/Event Statements *  
+ **********************/
+Statement:	
+	InputText |
+	ButtonPress |    
+	OptionChoose |   
+	ValueSelect |
+	{Statement} COMMENT  
+;
+
+InputText:
+	('I')? ('type'|'input') value=VALUE  'into' name=ANDROID_ID
+;
+ButtonPress:
+	('I')? ('tap'|'press'|'click') 'over' name=ANDROID_ID
+;
+OptionChoose:
+	('I')? 'choose' value=VALUE
+;
+ValueSelect:
+	('I')? 'select' value=VALUE 'in' name=ANDROID_ID
+;
+
+/**********************
+ * Validation Statements *  
+ **********************/
+ConditionalStatement:	
+	IsEnabled |
+	IsVisible |
+    OptionIsChecked |
+    ValueIsSelected |
+    MessageIsDisplayed |
+    TextContains |
+     {ConditionalStatement} COMMENT  	 
+;
+
+
+
+IsEnabled:
+	op=('And'|'But')? name=ANDROID_ID 'is' 'enabled'
+;
+IsVisible:
+	op=('And'|'But')? name=ANDROID_ID 'is' 'visible'
+;
+OptionIsChecked:
+	op=('And'|'But')? 'Option' value=VALUE 'is'? 'checked'
+;	
+ValueIsSelected:
+	op=('And'|'But')? 'Value' value=VALUE 'is'? 'selected' 'at'? name=ANDROID_ID
+;
+MessageIsDisplayed:
+	op=('And'|'But')? 'Message' value=VALUE 'is'? 'showed'
+;
+TextContains:
+	op=('And'|'But')? 'Content' name=ANDROID_ID expression=BooleanEvaluation value=VALUE 
+;
+
+
+//Boolean expression, to check Content
+enum BooleanEvaluation:
+    StartsWith = 'startsWith' |
+    EndsWith = 'endsWith' |
+    Contains = 'contains'  |
+    Equals = 'equals'  |
+    GreaterThan = 'greaterThan' |	
+    GreaterEqualsThan = 'greaterEqualsThan' |
+    LessThan = 'lessThan' |
+    LessEqualsThan = 'lessEqualsThan' 
+;
+
+//Comment
+terminal COMMENT : '#' !('\n'|'\r')* ('\r'? '\n')?;
+
+//Android identifier
+ANDROID_ID:
+	ID(("."|"á"|"é"|"í"|"ó"|"ú"|"ñ") ID)*
+;	
+
+VALUE:
+	'\\'STRING
+;
