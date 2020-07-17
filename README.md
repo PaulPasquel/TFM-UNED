@@ -12,7 +12,7 @@ AppiumApi - Librerias implementa API para invocar Appium
 Los escenarios escritos en aatDSL se transforman en programas Java. Esto programas, para interactuar con Appium (motor de ejecución de las pruebas), usan elementos que solapan o abstraen la funcionalidad de Appium. Este API permite implementar una lógica uno a uno, entre las funcionalidades Appium a uilizar, y las instrucciones DSL permitidas. Así la implementación del interprete de ejecución es más fácil.
 
 
-| ----------------------- | ---------------------- |
+| :---:  		  | :---: 		   |
 |     Término	          |             DSL        |
 |  :---                   |  :---                  |
 |   Característica	  |     Feauture           |
@@ -23,23 +23,24 @@ Los escenarios escritos en aatDSL se transforman en programas Java. Esto program
 |   Resultados	          |       Then             |
 | ----------------------- | ---------------------- |    
 
-+ ----------------------- + ---------------------- + ----------------------------------- +
-        Elemento	                  Acción	                    Descripción
-+ ----------------------- + ---------------------- + ----------------------------------- +
-| TextView	                    type                    
-|                               input	                  Ingreso de datos desde el teclado.
-+ ----------------------- + ---------------------- + ----------------------------------- +
-| Button	                      tap
-|                               press                   Acción clic sobre el elemento.
-|                               click	                  
-+ ----------------------- + ---------------------- + ----------------------------------- +
-|  CheckBox o RadioButton	      choose	                Seleccionar un valor
-+ ----------------------- + ---------------------- + ----------------------------------- +
-   ListView                  	  select	                Seleccionar un valor
-+ ----------------------- + ---------------------- + ----------------------------------- +
-  Toast Notification	          show
-                                 see	                    Mostrar un mensaje de notificación
-+ ----------------------- + ---------------------- + ----------------------------------- +
+| :---:                   | :---:	           | :---:		 		 |
+|       Elemento	  |           Acción	   |                Descripción 	 |
+|  :---                   |  :---                  |   :---                              |
+| TextView	          |     type               |                                 	 |
+|                         |     input	           |  Ingreso de datos desde el teclado. |
+| ----------------------- | ---------------------- | ----------------------------------- |
+| Button	          |       tap              |                                     |
+|                         |     press              |  Acción clic sobre el elemento.     |
+|                         |     click	           |                                     |
+| ----------------------- | ---------------------- | ----------------------------------- |
+|  CheckBox o RadioButton |      choose	           |  Seleccionar un valor               |
+| ----------------------- | ---------------------- | ----------------------------------- |
+|  ListView               |  	  select           |  Seleccionar un valor               |
+| ----------------------- | ---------------------- | ----------------------------------- |
+| Toast Notification	  |       show             |                                     |
+|                         |      see	           |  Mostrar un mensaje de notificación |
+| ----------------------- | ---------------------- | ----------------------------------- |
+
 
 Elemento	Atributo	Descripción
 TextView	Enabled	Indica si el componente se encuentra habilitado para ser utilizado
