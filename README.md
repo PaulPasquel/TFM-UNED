@@ -12,16 +12,16 @@ AppiumApi - Librerias implementa API para invocar Appium
 Los escenarios escritos en aatDSL se transforman en programas Java. Esto programas, para interactuar con Appium (motor de ejecución de las pruebas), usan elementos que solapan o abstraen la funcionalidad de Appium. Este API permite implementar una lógica uno a uno, entre las funcionalidades Appium a uilizar, y las instrucciones DSL permitidas. Así la implementación del interprete de ejecución es más fácil.
 
 
-+ ----------------------- + ---------------------- +
-      Término	                        DSL
-+ ----------------------- + ---------------------- +
-    Característica	            Feauture
-    Escenario	                  Scenario
-    Descripción	            Scenario Description
-    Precondiciones	              Given
-    Pasos de Prueba	              When
-    Resultados	                  Then
-+ ----------------------- + ---------------------- +    
+| ----------------------- | ---------------------- |
+|     Término	          |             DSL        |
+|  :---                   |  :---                  |
+|   Característica	  |     Feauture           |
+|   Escenario	          |       Scenario         |
+|   Descripción	          | Scenario Description   |
+|   Precondiciones	  |       Given            |
+|   Pasos de Prueba	  |       When             |
+|   Resultados	          |       Then             |
+| ----------------------- | ---------------------- |    
 
 + ----------------------- + ---------------------- + ----------------------------------- +
         Elemento	                  Acción	                    Descripción
