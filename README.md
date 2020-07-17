@@ -11,8 +11,8 @@ Es un proyecto escrito sobre XText para genera un DSL basado en Gherkin que perm
 AppiumApi - Librerias implementa API para invocar Appium
 Los escenarios escritos en aatDSL se transforman en programas Java. Esto programas, para interactuar con Appium (motor de ejecución de las pruebas), usan elementos que solapan o abstraen la funcionalidad de Appium. Este API permite implementar una lógica uno a uno, entre las funcionalidades Appium a uilizar, y las instrucciones DSL permitidas. Así la implementación del interprete de ejecución es más fácil.
 
+´Principales Elementos´
 
-| :---:  		  | :---: 		   |
 |     Término	          |             DSL        |
 |  :---                   |  :---                  |
 |   Característica	  |     Feauture           |
@@ -21,36 +21,34 @@ Los escenarios escritos en aatDSL se transforman en programas Java. Esto program
 |   Precondiciones	  |       Given            |
 |   Pasos de Prueba	  |       When             |
 |   Resultados	          |       Then             |
-| ----------------------- | ---------------------- |    
-
-| :---:                   | :---:	           | :---:		 		 |
-|       Elemento	  |           Acción	   |                Descripción 	 |
-|  :---                   |  :---                  |   :---                              |
-| TextView	          |     type               |                                 	 |
-|                         |     input	           |  Ingreso de datos desde el teclado. |
-| ----------------------- | ---------------------- | ----------------------------------- |
-| Button	          |       tap              |                                     |
-|                         |     press              |  Acción clic sobre el elemento.     |
-|                         |     click	           |                                     |
-| ----------------------- | ---------------------- | ----------------------------------- |
-|  CheckBox o RadioButton |      choose	           |  Seleccionar un valor               |
-| ----------------------- | ---------------------- | ----------------------------------- |
-|  ListView               |  	  select           |  Seleccionar un valor               |
-| ----------------------- | ---------------------- | ----------------------------------- |
-| Toast Notification	  |       show             |                                     |
-|                         |      see	           |  Mostrar un mensaje de notificación |
-| ----------------------- | ---------------------- | ----------------------------------- |
 
 
-Elemento	Atributo	Descripción
-TextView	Enabled	Indica si el componente se encuentra habilitado para ser utilizado
-	Visible	Indica si el componente se encuentra visible
-	Content	Indica el texto contenido
-Button		
-CheckBox o RadioButton	Checked	Indica si el elemento esta seleccionado o no.
-ListView	Selected	Indica el texto que esta seleccionado en la lista de valores.
-Notification	Name	Texto que se muestra en el componente de notificaciones
+´Acciones y elementos/componentes permitidos´
 
+|       Elemento          |       Acción       |                Descripción          |
+|  :---                   |  :---              |   :---                              |
+| TextView                |    type            |                                     |
+|                         |    input           |  Ingreso de datos desde el teclado. |
+| Button                  |    tap             |                                     |
+|                         |    press           |  Acción clic sobre el elemento.     |
+|                         |    click           |                                     |
+|  CheckBox o RadioButton |    choose          |  Seleccionar un valor               |
+|  ListView               |    select          |  Seleccionar un valor               |
+| Toast Notification      |    show            |                                     |
+|                         |    see             |  Mostrar un mensaje de notificación |
+
+
+´Validaciones o verificaciones permitidas´
+
+|            Elemento       |       Atributo     |             Descripción|
+|  :---                     |  :---              |   :---                              |
+|    TextView               |    Enabled         |  Indica si el componente se encuentra habilitado para ser utilizado|
+|                           |    Visible         |  Indica si el componente se encuentra visible|
+|                           |    Content         |  Indica el texto contenido|
+|    Button                 |                    ||
+|    CheckBox o RadioButton |    Checked         |  Indica si el elemento esta seleccionado o no.|
+|    ListView               |    Selected        |  Indica el texto que esta seleccionado en la lista de valores.|
+|    Notification           |    Name            |  Texto que se muestra en el componente de notificaciones|
 
 --------------------------------------------------------------------------------------------------
 Ejemplo:
