@@ -53,23 +53,22 @@ Los escenarios escritos en aatDSL se transforman en programas Java. Esto program
 --------------------------------------------------------------------------------------------------
 #### Ejemplo:
 
-´´´ruby
-
+```ruby
 Feature:
-	"Calcular el pago mensual de la hipoteca"
+    "Calcular el pago mensual de la hipoteca"
 
 //
 Scenario: 1
-	"El usuario ingresar los datos requeridos, y seleccionar la opción de mese para indicar el plazo de la hipoteca"
+    "El usuario ingresar los datos requeridos, y seleccionar la opción de mese para indicar el plazo de la hipoteca"
 Given:
-	Option \"Importe del Préstamo" is checked
-	But Option \"Cuota Mensual" is checked
+    Option \"Importe del Préstamo" is checked
+    But Option \"Cuota Mensual" is checked
 When:
-	I type \"1000" into Importe.del.Prestamo
-	I type \"12" into Tasa.de.Interes
-	I type \"240" into Plazo.Hipoteca
-	I choose \"Mes"
-	I press over Calcular
+    I type \"1000" into Importe.del.Prestamo
+    I type \"12" into Tasa.de.Interes
+    I type \"240" into Plazo.Hipoteca
+    I choose \"Mes"
+    I press over Calcular
 Then:
-	Content Cuota.Mensual equals \"1200.17"
-´´´
+    Content Cuota.Mensual equals \"1200.17"
+```
