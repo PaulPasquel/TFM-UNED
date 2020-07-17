@@ -53,7 +53,7 @@ Los escenarios escritos en aatDSL se transforman en programas Java. Esto program
 --------------------------------------------------------------------------------------------------
 #### Ejemplo:
 
-```cucumber
+```gherkin
 Feature:
     "Calcular el pago mensual de la hipoteca"
 
