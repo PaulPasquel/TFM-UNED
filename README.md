@@ -11,7 +11,7 @@ Es un proyecto escrito sobre XText para genera un DSL basado en Gherkin que perm
 AppiumApi - Librerias implementa API para invocar Appium
 Los escenarios escritos en aatDSL se transforman en programas Java. Esto programas, para interactuar con Appium (motor de ejecución de las pruebas), usan elementos que solapan o abstraen la funcionalidad de Appium. Este API permite implementar una lógica uno a uno, entre las funcionalidades Appium a uilizar, y las instrucciones DSL permitidas. Así la implementación del interprete de ejecución es más fácil.
 
-´Principales Elementos´
+###Principales Elementos
 
 |     Término	          |             DSL        |
 |  :---                   |  :---                  |
@@ -23,7 +23,7 @@ Los escenarios escritos en aatDSL se transforman en programas Java. Esto program
 |   Resultados	          |       Then             |
 
 
-´Acciones y elementos/componentes permitidos´
+###Acciones y elementos/componentes permitidos
 
 |       Elemento          |       Acción       |                Descripción          |
 |  :---                   |  :---              |   :---                              |
@@ -38,7 +38,7 @@ Los escenarios escritos en aatDSL se transforman en programas Java. Esto program
 |                         |    see             |  Mostrar un mensaje de notificación |
 
 
-´Validaciones o verificaciones permitidas´
+###Validaciones o verificaciones permitidas
 
 |            Elemento       |       Atributo     |             Descripción|
 |  :---                     |  :---              |   :---                              |
@@ -52,6 +52,7 @@ Los escenarios escritos en aatDSL se transforman en programas Java. Esto program
 
 --------------------------------------------------------------------------------------------------
 Ejemplo:
+´´´gherkin
 Feature:
 	"Calcular el pago mensual de la hipoteca"
 
@@ -69,3 +70,4 @@ When:
 	I press over Calcular
 Then:
 	Content Cuota.Mensual equals \"1200.17"
+´´´
